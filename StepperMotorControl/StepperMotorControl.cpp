@@ -1,6 +1,7 @@
 #include "StepperMotorControl.h"
 
 void useStepperMotor(bit doStep_in, bit doRewind_in, bit *a_out, bit *b_out, bit *c_out, bit *d_out, volatile bit *motorReady_out) {
+
 	#pragma HLS INTERFACE ap_none port=motorReady_out
 	#pragma HLS INTERFACE ap_ctrl_none port=return
 	#pragma HLS INTERFACE ap_none port=a_out
@@ -11,14 +12,14 @@ void useStepperMotor(bit doStep_in, bit doRewind_in, bit *a_out, bit *b_out, bit
 	// number of steps done
 	static int steps_count = 0;
 	// number of the sequence of signals
-	static int sequence_no = 4; // ++--
+	static int sequence_no = 4; // +--+
 	// rewind activated
 	static bool rewinding = false;
 	
-	static bit a;
-	static bit b;
-	static bit c;
-	static bit d;
+	static bit a = 1;
+	static bit b = 0;
+	static bit c = 0;
+	static bit d = 1;
 
 //	static bit motorReady;
 
@@ -51,6 +52,7 @@ void useStepperMotor(bit doStep_in, bit doRewind_in, bit *a_out, bit *b_out, bit
 	*c_out = c;
 	*d_out = d;
 //	*motorReady_out = motorReady;
+
 }
 
 void doRewind(int *steps_count, int *sequence_no, bit *a_out, bit *b_out, bit *c_out, bit *d_out) {
@@ -97,12 +99,17 @@ void doRewind(int *steps_count, int *sequence_no, bit *a_out, bit *b_out, bit *c
 }
 
 void delay() {
+//	static int sum = 0;
+	static bool flag = false;
 	delay: {
 //	#pragma HLS PROTOCOL floating
-		for(volatile int i = 0; i < (SPEED/2); i++) {
-			#pragma HLS PROTOCOL fixed
-	//		DO_PRAGMA (HLS loop_tripcount min = SPEED)
-			ap_wait();
+		for(int i = 0; i < SPEED; i++) {
+//			#pragma HLS LATENCY min=1
+//			sum++;
+			flag = !flag;
+//			#pragma HLS PROTOCOL fixed
+//			DO_PRAGMA (HLS loop_tripcount min = SPEED)
+//			ap_wait();
 		}
 	}
 }

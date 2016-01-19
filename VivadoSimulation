@@ -1,0 +1,9 @@
+1. Nelle proprietà della tab Sources ci sia Simulation (checkbox)
+2. Dalla tab Compile Order, tasto dx, Edit Simulation Sets..., aggiungere il file .vhd del modulo sotto test
+3. Dalla tab Hierarchy impostare Hierarchy Update come manuale
+4. Per controllare le dipendenze e ordine di compilazione, comando: report_compile_order dalla Tcl console
+
+
+
+File .vho per template del componente per il port map e la dichiarazione nel testbench: 
+/<nomeProgetto>.srcs/sources_1/bd/design_1/ip/<nomeComponente>/<nomeComponente>.vho

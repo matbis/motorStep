@@ -306,17 +306,17 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>useStepperMotor_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="useStepperMotor" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_useStepperMotor_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>inputStepperManager_0</spirit:instanceName>
         <spirit:componentRef spirit:library="hls" spirit:name="inputStepperManager" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_inputStepperManager_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>useStepperMotor_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="useStepperMotor" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_useStepperMotor_0_1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -324,19 +324,24 @@
       <spirit:adHocConnection>
         <spirit:name>clk_wiz_clk_out1</spirit:name>
         <spirit:internalPortReference spirit:componentRef="clk_wiz" spirit:portRef="clk_out1"/>
-        <spirit:internalPortReference spirit:componentRef="useStepperMotor_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="inputStepperManager_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="useStepperMotor_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>constant_reset_dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="constant_reset" spirit:portRef="dout"/>
-        <spirit:internalPortReference spirit:componentRef="useStepperMotor_0" spirit:portRef="ap_rst"/>
         <spirit:internalPortReference spirit:componentRef="inputStepperManager_0" spirit:portRef="ap_rst"/>
+        <spirit:internalPortReference spirit:componentRef="useStepperMotor_0" spirit:portRef="ap_rst"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>sys_clock_1</spirit:name>
         <spirit:externalPortReference spirit:portRef="sys_clock"/>
         <spirit:internalPortReference spirit:componentRef="clk_wiz" spirit:portRef="clk_in1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>doStep_in_V_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="doStep_in_V"/>
+        <spirit:internalPortReference spirit:componentRef="inputStepperManager_0" spirit:portRef="doStep_in_V"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>useStepperMotor_0_a_out_V</spirit:name>
@@ -364,19 +369,14 @@
         <spirit:externalPortReference spirit:portRef="motorReady_V"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>doRewind_in_V_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="doRewind_in_V"/>
-        <spirit:internalPortReference spirit:componentRef="useStepperMotor_0" spirit:portRef="doRewind_in_V"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>doStep_in_V_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="doStep_in_V"/>
-        <spirit:internalPortReference spirit:componentRef="inputStepperManager_0" spirit:portRef="doStep_in_V"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>inputStepperManager_0_doStep_out_V</spirit:name>
         <spirit:internalPortReference spirit:componentRef="inputStepperManager_0" spirit:portRef="doStep_out_V"/>
         <spirit:internalPortReference spirit:componentRef="useStepperMotor_0" spirit:portRef="doStep_in_V"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>doRewind_in_V_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="doRewind_in_V"/>
+        <spirit:internalPortReference spirit:componentRef="useStepperMotor_0" spirit:portRef="doRewind_in_V"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
   </spirit:design>
