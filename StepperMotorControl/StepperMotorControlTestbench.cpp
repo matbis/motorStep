@@ -2,49 +2,67 @@
 
 int main()
 {
-	bit doRewind = 1;
-	bit doStep = 0;
+	bit doRewind;
+	bit doStep;
 	bit a_out;
 	bit b_out;
 	bit c_out;
 	bit d_out;
-	bit motorReady;
+	bit stepDone;
 	int i=0;
 
-	// reset
-	useStepperMotor(doStep, doRewind, &a_out, &b_out, &c_out, &d_out, &motorReady);
-	
-	if(motorReady != 1) {
-		printf("Error in resetting motor. Exiting ...\n");
-		exit(1);
-	}
-	printf("Motor is ready to operate. Starting ...\n");
-	
-	doRewind = 0;
-	doStep = 1;
-		
-	// doStep() 10 times
-	while(i<10) {
-		useStepperMotor(doStep, doRewind, &a_out, &b_out, &c_out, &d_out, &motorReady);
-		i++;
-	}
-
+	// REWIND
 	doRewind = 1;
 	doStep = 0;
-
-	// reset
-	i = 0;
-	while(i<11) {
-		useStepperMotor(doStep, doRewind, &a_out, &b_out, &c_out, &d_out, &motorReady);
+	stepperMotor(doStep, doRewind, &a_out, &b_out, &c_out, &d_out, &stepDone);
+	if(stepDone != 1) {
+		printf("+++++ Error in rewinding motor. Exit ... +++++\n");
+		exit(1);
+	}
+	printf("+++++ Motor is ready to operate. Waiting doStep signal ... +++++\n");
+	
+	// DO STEP
+	doRewind = 0;
+	while(i<1) {
+		doStep = 1;
+		stepperMotor(doStep, doRewind, &a_out, &b_out, &c_out, &d_out, &stepDone);
+		doStep = 0;
+		int j = 0;
+		// delay
+		while(j<SPEED+1) {
+			stepperMotor(doStep, doRewind, &a_out, &b_out, &c_out, &d_out, &stepDone);
+			j++;
+		}
 		i++;
 	}
 
-	if(motorReady != 1) {
-			printf("Error in resetting motor. Exiting ...\n");
+	// DO NOTHING
+	doRewind = 0;
+	doStep = 0;
+	stepperMotor(doStep, doRewind, &a_out, &b_out, &c_out, &d_out, &stepDone);
+
+	// REWIND
+	doRewind = 1;
+	doStep = 0;
+	stepperMotor(doStep, doRewind, &a_out, &b_out, &c_out, &d_out, &stepDone);
+	doRewind = 0;
+	i = 0;
+	// delay
+	while(i<SPEED+1) {
+		stepperMotor(doStep, doRewind, &a_out, &b_out, &c_out, &d_out, &stepDone);
+		i++;
+	}
+
+	if(stepDone != 1) {
+			printf("+++++ Error in resetting motor. Exiting ... +++++\n");
 			exit(1);
 	}
 
-	printf("fine simulazione!\n");
+	// DO STEP
+	doStep = 1;
+	stepperMotor(doStep, doRewind, &a_out, &b_out, &c_out, &d_out, &stepDone);
+
+	printf("+++++ Fine simulazione! +++++\n");
 
 	return 0;
 }

@@ -2,22 +2,22 @@
 #include "ap_utils.h"
 
 // speed used by the motor returning at start position when reset occurs
-#define SPEED 10000
-#define DO_PRAGMA_INNER(x) _Pragma (#x)
-#define DO_PRAGMA(x) DO_PRAGMA_INNER(x)
+#define SPEED 5
+//#define DO_PRAGMA_INNER(x) _Pragma (#x)
+//#define DO_PRAGMA(x) DO_PRAGMA_INNER(x)
 
 
 typedef ap_uint<1> bit;
 
 /*
 sequence	A(a)	B(b)	A'(c)	B'(d)
-1			+		+		-		-
-2			-		+		+		-
-3			-		-		+		+
-4			+		-		-		+
+0			+		+		-		-
+1			-		+		+		-
+2			-		-		+		+
+3			+		-		-		+
 */
 
-void useStepperMotor(bit doStep_in, bit doReset_in, bit *a_out, bit *b_out, bit *c_out, bit *d_out, volatile bit *motorReady);
-void doRewind(int *steps_count, int *sequence_no, bit *a_out, bit *b_out, bit *c_out, bit *d_out);
-void delay();
-void doStep(bit *a_out, bit *b_out, bit *c_out, bit *d_out, int *steps_count, int *sequence_no);
+void stepperMotor(bit doStep_in, bit doRewind_in, bit *a_out, bit *b_out, bit *c_out, bit *d_out, volatile bit *stepDone_out);
+//void delay();
+void doStep(int *steps_count, ap_uint<2> *sequence_no, bool rewind);
+void driveMotor(ap_uint<2> *sequence_no, bit *a_out, bit *b_out, bit *c_out, bit *d_out);
