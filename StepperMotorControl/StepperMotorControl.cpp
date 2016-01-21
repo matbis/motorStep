@@ -84,6 +84,7 @@ void stepperMotor(bit doStep_in, bit doRewind_in, int delayDuration_in, bit *a_o
 	}
 
 	driveMotor(&sequence_no, a_out, b_out, c_out, d_out);
+	//TODO sequence_no_tmp
 
 	sequence_no = sequence_no_tmp;
 }

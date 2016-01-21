@@ -1,0 +1,15 @@
+[*] --> waitingInput
+
+waitingInput -> forwarding : doStep_in
+waitingInput -> rewinding : doRewind_in
+
+forwarding -> delay : doStep()
+forwarding -> waitingInput : prevState == delay
+
+rewinding -> delay : doStep()
+rewinding -> rewinding : steps_count > 0
+rewinding -> waitingInput : steps_count == 0
+
+delay -> delay : counter_delay < delayDuration_in
+delay -> forwarding : counter_delay == delayDuration_in && prevState == forwarding
+delay -> rewinding : counter_delay == delayDuration_in && prevState == rewinding
