@@ -7,3 +7,20 @@
 
 File .vho per template del componente per il port map e la dichiarazione nel testbench: 
 /<nomeProgetto>.srcs/sources_1/bd/design_1/ip/<nomeComponente>/<nomeComponente>.vho
+
+
+REWINDING:
+1 ciclo di ck per intercettare l'ingresso (DoRewind_in) + numero di step * (delayDuration + 1) per intercettare un nuovo ingresso.
+
+FORWARDING
+1 ciclo di ck per intercettare l'ingresso (DoStep_in) + (delayDuration + 1) per intercettare un nuovo ingresso.
+
+
+PMOD:
+A (a) JA7 AB11
+A'(c) JA9 AB9
+
+B (b) JA8 AB10
+B'(d) JA10 AA8
+
+per vincolo fili motore, scambiati i pin JA9 e JA8 in I/O Planning.
