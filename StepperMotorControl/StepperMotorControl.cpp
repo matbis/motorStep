@@ -1,20 +1,35 @@
 #include "StepperMotorControl.h"
 
-void stepperMotor(bit doStep_in, bit doRewind_in, int delayDuration_in, bit *a_out, bit *b_out, bit *c_out, bit *d_out, bit *stepDone_out) {
+void stepperMotor(
+		// inputs
+		bit doStep_in,
+		bit doRewind_in,
+		bit stopRewind_in,
+		int nSteps_in,
+		int delayDuration_in,
+		// outputs
+		bit *a_out,
+		bit *b_out,
+		bit *c_out,
+		bit *d_out,
+		bit *stepDone_out) {
 
-	#pragma HLS INTERFACE ap_stable port=delayDuration_in
-//	#pragma HLS INTERFACE s_axilite port=stepDone_out
-//	#pragma HLS INTERFACE s_axilite port=doRewind_in
 //	#pragma HLS INTERFACE s_axilite port=doStep_in
+//	#pragma HLS INTERFACE s_axilite port=doRewind_in
+//	#pragma HLS INTERFACE s_axilite port=stopRewind_in
+//	#pragma HLS INTERFACE s_axilite port=nSteps_in
+//	#pragma HLS INTERFACE s_axilite port=stepDone_out
 
 	#pragma HLS INTERFACE ap_none port=stepDone_out
 //	#pragma HLS INTERFACE ap_ctrl_none port=return
+
+	#pragma HLS INTERFACE ap_stable port=delayDuration_in
 	#pragma HLS INTERFACE ap_none port=a_out
 	#pragma HLS INTERFACE ap_none port=b_out
 	#pragma HLS INTERFACE ap_none port=c_out
 	#pragma HLS INTERFACE ap_none port=d_out
 	
-	// number of steps done
+	// remaining steps to do
 	static int steps_count = 0;
 	#pragma HLS RESET variable=steps_count
 
@@ -36,13 +51,13 @@ void stepperMotor(bit doStep_in, bit doRewind_in, int delayDuration_in, bit *a_o
 
 	switch(curState) {
 		case waitingInputState:
-			waitingInput(&curState, &prevState, doRewind_in, doStep_in, steps_count, stepDone_out);
+			waitingInput(&curState, &prevState, doRewind_in, stopRewind_in, doStep_in, nSteps_in, &steps_count, stepDone_out);
 			break;
 		case forwardingState:
-			forwarding(&curState, &prevState, &steps_count, &sequence_no_tmp, stepDone_out);
+			forwarding(&curState, &prevState, doRewind_in, &steps_count, &sequence_no_tmp, stepDone_out);
 			break;
 		case rewindingState:
-			rewinding(&curState, &prevState, &steps_count, &sequence_no_tmp, stepDone_out);
+			rewinding(&curState, &prevState, stopRewind_in, &sequence_no_tmp, stepDone_out);
 			break;
 		case delayState:
 			delay(&curState, &prevState, &counter_delay, delayDuration_in, stepDone_out);
@@ -55,39 +70,46 @@ void stepperMotor(bit doStep_in, bit doRewind_in, int delayDuration_in, bit *a_o
 }
 
 
-void waitingInput(State* curState, State* prevState, bit doRewind_in, bit doStep_in, int steps_count, bit* stepDone_out) {
+void waitingInput(State* curState, State* prevState, bit doRewind_in, bit stopRewind_in, bit doStep_in, int nSteps_in, int *steps_count, bit* stepDone_out) {
 	#pragma HLS INLINE
-	if(doRewind_in == 1) {
-		if(steps_count > 0) {
-			*curState = rewindingState;
-			*prevState = waitingInputState;
-		}
+	if(doRewind_in == 1 && stopRewind_in == 0) {
+		*curState = rewindingState;
+		*prevState = waitingInputState;
 	}
 	else if(doStep_in == 1) {
-		*curState = forwardingState;
-		*prevState = waitingInputState;
+		if(nSteps_in > 0) {
+			*steps_count = nSteps_in;
+			*curState = forwardingState;
+			*prevState = waitingInputState;
+		}
 	}
 	*stepDone_out = 1;
 }
 
-void forwarding(State* curState, State* prevState, int* steps_count, ap_uint<2>* sequence_no_tmp, bit* stepDone_out) {
+void forwarding(State* curState, State* prevState, bit doRewind_in, int* steps_count, ap_uint<2>* sequence_no_tmp, bit* stepDone_out) {
 	#pragma HLS INLINE
-	if(*prevState == delayState) {
-		*curState = waitingInputState;
+	if(doRewind_in == 1) {
+		*curState = rewindingState;
 		*prevState = forwardingState;
+		*steps_count = 0;
+	}
+	else if(*steps_count > 0) {
+		doStep(sequence_no_tmp, false);
+		*curState = delayState;
+		*prevState = forwardingState;
+		*steps_count--;
 	}
 	else {
-		doStep(steps_count, sequence_no_tmp, false);
-		*curState = delayState;
+		*curState = waitingInputState;
 		*prevState = forwardingState;
 	}
 	*stepDone_out = 0;
 }
 
-void rewinding(State* curState, State* prevState, int* steps_count, ap_uint<2>* sequence_no_tmp, bit* stepDone_out) {
+void rewinding(State* curState, State* prevState, bit stopRewind_in, ap_uint<2>* sequence_no_tmp, bit* stepDone_out) {
 	#pragma HLS INLINE
-	if(*steps_count > 0) {
-		doStep(steps_count, sequence_no_tmp, true);
+	if(stopRewind_in == 0) {
+		doStep(sequence_no_tmp, true);
 		*curState = delayState;
 		*prevState = rewindingState;
 	}
@@ -116,7 +138,7 @@ void delay(State* curState, State* prevState, int* counter_delay, int delayDurat
 	*counter_delay = counter_delay_tmp;
 }
 
-void doStep(int *steps_count, ap_uint<2> *sequence_no, bool rewind) {
+void doStep(ap_uint<2> *sequence_no, bool rewind) {
 	#pragma HLS INLINE
 	if(rewind) {
 		if(*sequence_no == 0) {
@@ -126,9 +148,6 @@ void doStep(int *steps_count, ap_uint<2> *sequence_no, bool rewind) {
 			// move to the prev sequence
 			(*sequence_no)--;
 		}
-
-		// decrement steps number
-		(*steps_count)--;
 	}
 	else {
 		if(*sequence_no == 3) {
@@ -138,8 +157,6 @@ void doStep(int *steps_count, ap_uint<2> *sequence_no, bool rewind) {
 			// move to the next sequence
 			(*sequence_no)++;
 		}
-		// increment steps number
-		(*steps_count)++;
 	}//rewind
 }
 
