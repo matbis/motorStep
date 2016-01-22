@@ -30,7 +30,7 @@ int main()
 		doStep = 0;
 		int j = 0;
 		// delay
-		while(j<delayDuration+1) {
+		while(j<delayDuration+2) {
 			stepperMotor(doStep, doRewind, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
 			j++;
 		}
@@ -49,7 +49,7 @@ int main()
 	doRewind = 0;
 	i = 0;
 	// delay
-	while(i<2*(delayDuration+1)) {
+	while(i<2*(delayDuration+2)) {
 		stepperMotor(doStep, doRewind, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
 		i++;
 	}

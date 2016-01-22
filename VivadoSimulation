@@ -31,3 +31,10 @@ per vincolo fili motore, scambiati i pin JA9 e JA8 in I/O Planning.
 TODO:
 - testbench wrapper non collega le uscite dei motori (stepDone_out si)
 - stepperMotor si scalda (!!!)
+
+
+
+
+
+STEPPER MOTOR microstepping:
+http://www.ebay.com/gds/Microstepping-Versus-Gear-Reduction-/10000000002352664/g.html
