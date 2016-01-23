@@ -97,7 +97,7 @@ void forwarding(State* curState, State* prevState, bit doRewind_in, int* steps_c
 		doStep(sequence_no_tmp, false);
 		*curState = delayState;
 		*prevState = forwardingState;
-		*steps_count--;
+		(*steps_count)--;
 	}
 	else {
 		*curState = waitingInputState;
