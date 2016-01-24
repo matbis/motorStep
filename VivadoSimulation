@@ -18,9 +18,9 @@ FORWARDING
 
 PMOD:
 A (a) JA7 AB11
-A'(c) JA9 AB9
+A'(c) JA9 AB10
 
-B (b) JA8 AB10
+B (b) JA8 AB9
 B'(d) JA10 AA8
 
 per vincolo fili motore, scambiati i pin JA9 e JA8 in I/O Planning.
