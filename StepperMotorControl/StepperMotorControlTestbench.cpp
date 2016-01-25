@@ -4,6 +4,7 @@ int main()
 {
 	bit doRewind;
 	bit doStep;
+	bit full_step;
 	bit a_out;
 	bit b_out;
 	bit c_out;
@@ -18,7 +19,9 @@ int main()
 	stopRewind = 1;
 	doRewind = 1;
 	doStep = 0;
-	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+	full_step = 0;
+
+	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 	if(stepDone != 1) {
 		printf("+++++ Error in rewinding motor. Exit ... +++++\n");
 		exit(1);
@@ -30,12 +33,12 @@ int main()
 	stopRewind = 0;
 	while(i<2) {
 		doStep = 1;
-		stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+		stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 		doStep = 0;
 		int j = 0;
 		// delay
 		while(j<delayDuration+2) {
-			stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+			stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 			j++;
 		}
 		i++;
@@ -44,12 +47,12 @@ int main()
 	// DO NOTHING
 	doRewind = 0;
 	doStep = 0;
-	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 
 	// REWIND
 	doRewind = 1;
 	doStep = 0;
-	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 	doRewind = 0;
 	i = 0;
 	// delay e settaggio di stop rewinding dopo l'ultimo step
@@ -57,15 +60,15 @@ int main()
 		if(i ==  2*(delayDuration+1) - delayDuration ){
 			stopRewind = 1;
 		}
-		stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+		stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 		i++;
 	}
 
 	//transizione da delay a rewinding
-	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 
 	// transizione da rewinding a waiting input
-	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 	if(stepDone != 1) {
 			printf("+++++ Error in resetting motor. Exiting ... +++++\n");
 			exit(1);
@@ -76,7 +79,7 @@ int main()
 	nSteps = 2;
 
 	//campiono il do_step e transizione da waiting input a forwarding
-	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 	doStep = 0;
 	i = 0;
 
@@ -85,17 +88,17 @@ int main()
 			int j = 0;
 			// un clock per transizione da forwarding a delay + delayDuraion+ un clock
 			while(j<delayDuration+1) {
-				stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+				stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 				j++;
 			}
 			i++;
 		}
 
 	//transizione da delay a forward
-	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 
 	//transizione da forward a waiting
-	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, &a_out, &b_out, &c_out, &d_out, &stepDone);
+	stepperMotor(doStep, doRewind, stopRewind, nSteps, delayDuration, full_step, &a_out, &b_out, &c_out, &d_out, &stepDone);
 
 
 
