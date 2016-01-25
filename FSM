@@ -1,15 +1,19 @@
 [*] --> waitingInput
 
-waitingInput -right-> forwarding : doStep_in && nSteps_in > 0
-waitingInput -left-> rewinding : doRewind_in
+waitingInput -right-> forwarding : doStep_in == 1 && nSteps_in > 0
+waitingInput -left-> rewinding : doRewind_in == 1
+waitingInput : stepDone_out = 1
 
-forwarding -down-> delay : steps_count < nSteps_in &&  doRewind_in == 0
+forwarding -down-> delay : steps_count < nSteps_in \n&&  doRewind_in == 0
 forwarding -up-> waitingInput : steps_count == nSteps_in 
-forwarding -left-> rewinding : doRewind_in
+forwarding -left-> rewinding : doRewind_in == 1
+forwarding: stepDone_out = 0
 
-rewinding -down-> delay : stopRewind == 0
-rewinding -up-> waitingInput : stopRewind == 1
+rewinding -down-> delay : stopRewind_in == 0
+rewinding -up-> waitingInput : stopRewind_in == 1
+rewinding: stepDone_out = 0
 
 delay -down-> delay : counter_delay < delayDuration_in
-delay -up-> forwarding : counter_delay == delayDuration_in && prevState == forwarding
-delay -up-> rewinding : counter_delay == delayDuration_in && prevState == rewinding
+delay -up-> forwarding : counter_delay == delayDuration_in \n&& prevState == forwarding
+delay -up-> rewinding : counter_delay == delayDuration_in \n&& prevState == rewinding
+delay: stepDone_out = 0
