@@ -36,7 +36,7 @@ void stepperMotor(
 	#pragma HLS RESET variable=steps_count
 
 	// number of the sequence of signals
-	static ap_uint<3> sequence_no = 0; // ++--
+	static ap_uint<3> sequence_no = 1;
 	#pragma HLS RESET variable=sequence_no
 
 	static enum State curState = waitingInputState;
