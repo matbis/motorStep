@@ -1,3 +1,7 @@
+#motorStep
+membri del gruppo: Bisacchi, Di Cesare, Franzoni, Tosi.
+
+
 /presentazione
 cartella contentente la presentazione del progetto in formato .key, .pptx, .pdf
 
