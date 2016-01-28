@@ -1,4 +1,4 @@
-#motorStep
+# motorStep
 membri del gruppo: Bisacchi, Di Cesare, Franzoni, Tosi.
 
 
