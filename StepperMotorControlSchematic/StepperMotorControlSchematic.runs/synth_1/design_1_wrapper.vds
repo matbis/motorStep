@@ -1,0 +1,580 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 18:24:04 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Wed Jan 27 15:55:50 2016
+# Process ID: 3096
+# Log file: C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1/design_1_wrapper.vds
+# Journal file: C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl
+# set_param gui.test TreeTableDev
+# set_param xicom.use_bs_reader 1
+# debug::add_scope template.lib 1
+# set_msg_config -id {HDL 9-1061} -limit 100000
+# set_msg_config -id {HDL 9-1654} -limit 100000
+# set_msg_config -id {Synth 8-256} -limit 10000
+# set_msg_config -id {Synth 8-638} -limit 10000
+# create_project -in_memory -part xc7z020clg484-1
+# set_param project.compositeFile.enableAutoGeneration 0
+# set_param synth.vivado.isSynthRun true
+# set_msg_config -id {IP_Flow 19-2162} -severity warning -new_severity info
+# set_property webtalk.parent_dir C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.cache/wt [current_project]
+# set_property parent.project_path C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.xpr [current_project]
+# set_property default_lib xil_defaultlib [current_project]
+# set_property target_language VHDL [current_project]
+# set_property board_part em.avnet.com:zed:part0:0.9 [current_project]
+# set_property ip_repo_paths {
+#   C:/Users/utente/Desktop/StepperMotorControl
+#   C:/Users/utente/Desktop/StepperMotorControlSchematic
+# } [current_project]
+# add_files C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/design_1.bd
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/utente/Desktop/StepperMotorControl'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'c:/Users/utente/Desktop/StepperMotorControl' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1'.)
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/utente/Desktop/StepperMotorControlSchematic'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'c:/Users/utente/Desktop/StepperMotorControlSchematic' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1'.)
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2014.4/data/ip'.
+# set_property used_in_implementation false [get_files -all c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/stepperMotor_v1_0/dd458a5d/constraints/stepperMotor_ooc.xdc]
+# set_property used_in_implementation false [get_files -all c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_board.xdc]
+# set_property used_in_implementation false [get_files -all c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xdc]
+# set_property used_in_implementation false [get_files -all c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_ooc.xdc]
+# set_property used_in_implementation false [get_files -all C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
+# set_property is_locked true [get_files C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/design_1.bd]
+# read_vhdl -library xil_defaultlib C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+# read_xdc C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/constrs_1/new/Constraints.xdc
+# set_property used_in_implementation false [get_files C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/constrs_1/new/Constraints.xdc]
+# read_xdc dont_touch.xdc
+# set_property used_in_implementation false [get_files dont_touch.xdc]
+# catch { write_hwdef -file design_1_wrapper.hwdef }
+# synth_design -top design_1_wrapper -part xc7z020clg484-1
+Command: synth_design -top design_1_wrapper -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 235.801 ; gain = 76.578
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:31]
+INFO: [Synth 8-3491] module 'design_1' declared at 'C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'design_1' [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1.vhd:31]
+INFO: [Synth 8-113] binding component instance 'GND' to cell 'GND' [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1.vhd:122]
+INFO: [Synth 8-3491] module 'design_1_MUX_32_0_0' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_MUX_32_0_0/synth/design_1_MUX_32_0_0.vhd:56' bound to instance 'MUX_32_0' of component 'design_1_MUX_32_0_0' [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1.vhd:126]
+INFO: [Synth 8-638] synthesizing module 'design_1_MUX_32_0_0' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_MUX_32_0_0/synth/design_1_MUX_32_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'MUX_32' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/MUX_32_v1_0/f9cd04c1/MUX_32.vhd:35' bound to instance 'U0' of component 'MUX_32' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_MUX_32_0_0/synth/design_1_MUX_32_0_0.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'MUX_32' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/MUX_32_v1_0/f9cd04c1/MUX_32.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'MUX_32' (1#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/MUX_32_v1_0/f9cd04c1/MUX_32.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'design_1_MUX_32_0_0' (2#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_MUX_32_0_0/synth/design_1_MUX_32_0_0.vhd:65]
+INFO: [Synth 8-113] binding component instance 'VCC' to cell 'VCC' [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1.vhd:133]
+INFO: [Synth 8-3491] module 'design_1_proc_sys_reset_0_0' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/synth/design_1_proc_sys_reset_0_0.vhd:59' bound to instance 'proc_sys_reset_0' of component 'design_1_proc_sys_reset_0_0' [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1.vhd:137]
+INFO: [Synth 8-638] synthesizing module 'design_1_proc_sys_reset_0_0' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/synth/design_1_proc_sys_reset_0_0.vhd:74]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+	Parameter C_NUM_BUS_RST bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
+	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'proc_sys_reset' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/proc_sys_reset_v5_0/7820e39a/hdl/src/vhdl/proc_sys_reset.vhd:140' bound to instance 'U0' of component 'proc_sys_reset' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/synth/design_1_proc_sys_reset_0_0.vhd:120]
+INFO: [Synth 8-638] synthesizing module 'proc_sys_reset__parameterized0' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/proc_sys_reset_v5_0/7820e39a/hdl/src/vhdl/proc_sys_reset.vhd:199]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+	Parameter C_NUM_BUS_RST bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
+	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'lpf' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/proc_sys_reset_v5_0/7820e39a/hdl/src/vhdl/lpf.vhd:138]
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+INFO: [Synth 8-3491] module 'SRL16' declared at 'C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:34504' bound to instance 'POR_SRL_I' of component 'SRL16' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/proc_sys_reset_v5_0/7820e39a/hdl/src/vhdl/lpf.vhd:190]
+INFO: [Synth 8-638] synthesizing module 'SRL16' [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:34504]
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-256] done synthesizing module 'SRL16' (3#1) [C:/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:34504]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/lib_cdc_v1_0/d3fab4a1/hdl/src/vhdl/cdc_sync.vhd:106]
+	Parameter C_CDC_TYPE bound to: 1 - type: integer 
+	Parameter C_RESET_STATE bound to: 0 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 1 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 0 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 2 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/lib_cdc_v1_0/d3fab4a1/hdl/src/vhdl/cdc_sync.vhd:449]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/lib_cdc_v1_0/d3fab4a1/hdl/src/vhdl/cdc_sync.vhd:480]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/lib_cdc_v1_0/d3fab4a1/hdl/src/vhdl/cdc_sync.vhd:489]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/lib_cdc_v1_0/d3fab4a1/hdl/src/vhdl/cdc_sync.vhd:499]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/lib_cdc_v1_0/d3fab4a1/hdl/src/vhdl/cdc_sync.vhd:509]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/lib_cdc_v1_0/d3fab4a1/hdl/src/vhdl/cdc_sync.vhd:519]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (4#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/lib_cdc_v1_0/d3fab4a1/hdl/src/vhdl/cdc_sync.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (5#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/proc_sys_reset_v5_0/7820e39a/hdl/src/vhdl/lpf.vhd:138]
+INFO: [Synth 8-638] synthesizing module 'sequence' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/proc_sys_reset_v5_0/7820e39a/hdl/src/vhdl/sequence.vhd:146]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/proc_sys_reset_v5_0/7820e39a/hdl/src/vhdl/upcnt_n.vhd:125]
+	Parameter C_SIZE bound to: 6 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (6#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/proc_sys_reset_v5_0/7820e39a/hdl/src/vhdl/upcnt_n.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'sequence' (7#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/proc_sys_reset_v5_0/7820e39a/hdl/src/vhdl/sequence.vhd:146]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset__parameterized0' (8#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/proc_sys_reset_v5_0/7820e39a/hdl/src/vhdl/proc_sys_reset.vhd:199]
+INFO: [Synth 8-256] done synthesizing module 'design_1_proc_sys_reset_0_0' (9#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/synth/design_1_proc_sys_reset_0_0.vhd:74]
+INFO: [Synth 8-3491] module 'design_1_stepperMotor_0_3' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_stepperMotor_0_3/synth/design_1_stepperMotor_0_3.vhd:56' bound to instance 'stepperMotor_0' of component 'design_1_stepperMotor_0_3' [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1.vhd:150]
+INFO: [Synth 8-638] synthesizing module 'design_1_stepperMotor_0_3' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_stepperMotor_0_3/synth/design_1_stepperMotor_0_3.vhd:74]
+INFO: [Synth 8-3491] module 'stepperMotor' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/stepperMotor_v1_0/dd458a5d/hdl/vhdl/stepperMotor.vhd:12' bound to instance 'U0' of component 'stepperMotor' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_stepperMotor_0_3/synth/design_1_stepperMotor_0_3.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'stepperMotor' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/stepperMotor_v1_0/dd458a5d/hdl/vhdl/stepperMotor.vhd:30]
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = none [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/stepperMotor_v1_0/dd458a5d/hdl/vhdl/stepperMotor.vhd:61]
+INFO: [Synth 8-4512] found unpartitioned construct node [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/stepperMotor_v1_0/dd458a5d/hdl/vhdl/stepperMotor.vhd:235]
+INFO: [Synth 8-4512] found unpartitioned construct node [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/stepperMotor_v1_0/dd458a5d/hdl/vhdl/stepperMotor.vhd:237]
+INFO: [Synth 8-256] done synthesizing module 'stepperMotor' (10#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/stepperMotor_v1_0/dd458a5d/hdl/vhdl/stepperMotor.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'design_1_stepperMotor_0_3' (11#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_stepperMotor_0_3/synth/design_1_stepperMotor_0_3.vhd:74]
+INFO: [Synth 8-3491] module 'design_1_xlconstant_0_0' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.vhd:29' bound to instance 'xlconstant_0' of component 'design_1_xlconstant_0_0' [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1.vhd:166]
+INFO: [Synth 8-638] synthesizing module 'design_1_xlconstant_0_0' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.vhd:35]
+	Parameter CONST_VAL bound to: 32'b00000000010011000100101101000000 
+	Parameter CONST_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'xlconstant' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/xlconstant_v1_1/36911fd5/xlconstant.vhd:27' bound to instance 'U0' of component 'xlconstant' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'xlconstant__parameterized0' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/xlconstant_v1_1/36911fd5/xlconstant.vhd:36]
+	Parameter CONST_VAL bound to: 5000000 - type: integer 
+	Parameter CONST_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'xlconstant__parameterized0' (12#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/xlconstant_v1_1/36911fd5/xlconstant.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'design_1_xlconstant_0_0' (13#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.vhd:35]
+INFO: [Synth 8-3491] module 'design_1_xlconstant_1_0' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_1_0/sim/design_1_xlconstant_1_0.vhd:29' bound to instance 'xlconstant_1' of component 'design_1_xlconstant_1_0' [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1.vhd:170]
+INFO: [Synth 8-638] synthesizing module 'design_1_xlconstant_1_0' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_1_0/sim/design_1_xlconstant_1_0.vhd:35]
+	Parameter CONST_VAL bound to: 32'b00000000000000000000000000000001 
+	Parameter CONST_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'xlconstant' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/xlconstant_v1_1/36911fd5/xlconstant.vhd:27' bound to instance 'U0' of component 'xlconstant' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_1_0/sim/design_1_xlconstant_1_0.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'xlconstant__parameterized2' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/xlconstant_v1_1/36911fd5/xlconstant.vhd:36]
+	Parameter CONST_VAL bound to: 1 - type: integer 
+	Parameter CONST_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'xlconstant__parameterized2' (13#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/xlconstant_v1_1/36911fd5/xlconstant.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'design_1_xlconstant_1_0' (14#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_1_0/sim/design_1_xlconstant_1_0.vhd:35]
+INFO: [Synth 8-3491] module 'design_1_xlconstant_1_1' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_1_1/sim/design_1_xlconstant_1_1.vhd:29' bound to instance 'xlconstant_2' of component 'design_1_xlconstant_1_1' [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1.vhd:174]
+INFO: [Synth 8-638] synthesizing module 'design_1_xlconstant_1_1' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_1_1/sim/design_1_xlconstant_1_1.vhd:35]
+	Parameter CONST_VAL bound to: 32'b00000000000000000000000011001000 
+	Parameter CONST_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'xlconstant' declared at 'c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/xlconstant_v1_1/36911fd5/xlconstant.vhd:27' bound to instance 'U0' of component 'xlconstant' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_1_1/sim/design_1_xlconstant_1_1.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'xlconstant__parameterized4' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/xlconstant_v1_1/36911fd5/xlconstant.vhd:36]
+	Parameter CONST_VAL bound to: 200 - type: integer 
+	Parameter CONST_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'xlconstant__parameterized4' (14#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/xlconstant_v1_1/36911fd5/xlconstant.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'design_1_xlconstant_1_1' (15#1) [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_1_1/sim/design_1_xlconstant_1_1.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (16#1) [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (17#1) [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:31]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 270.820 ; gain = 111.598
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 270.820 ; gain = 111.598
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/PinFunctions.xml...
+Loading package from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from C:/Xilinx/Vivado/2014.4/data\./parts/xilinx/zynq/IOStandards.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_board.xdc] for cell 'design_1_i/proc_sys_reset_0'
+Finished Parsing XDC File [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_board.xdc] for cell 'design_1_i/proc_sys_reset_0'
+Parsing XDC File [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xdc] for cell 'design_1_i/proc_sys_reset_0'
+Finished Parsing XDC File [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xdc] for cell 'design_1_i/proc_sys_reset_0'
+Parsing XDC File [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/constrs_1/new/Constraints.xdc]
+Finished Parsing XDC File [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/constrs_1/new/Constraints.xdc]
+Parsing XDC File [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 13 instances were transformed.
+  FDR => FDRE: 12 instances
+  SRL16 => SRL16E: 1 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 591.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:43 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:43 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for design_1_i. (constraint file  C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1/dont_touch.xdc, line 7).
+Applied set_property DONT_TOUCH = true for design_1_i/xlconstant_0. (constraint file  C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1/dont_touch.xdc, line 10).
+Applied set_property DONT_TOUCH = true for design_1_i/xlconstant_1. (constraint file  C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1/dont_touch.xdc, line 13).
+Applied set_property DONT_TOUCH = true for design_1_i/stepperMotor_0. (constraint file  C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1/dont_touch.xdc, line 16).
+Applied set_property DONT_TOUCH = true for design_1_i/proc_sys_reset_0. (constraint file  C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1/dont_touch.xdc, line 19).
+Applied set_property DONT_TOUCH = true for design_1_i/MUX_32_0. (constraint file  C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1/dont_touch.xdc, line 22).
+Applied set_property DONT_TOUCH = true for design_1_i/xlconstant_2. (constraint file  C:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.runs/synth_1/dont_touch.xdc, line 25).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:44 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'seq_cnt_en_reg' into 'from_sys_reg' [c:/Users/utente/Desktop/StepperMotorControlSchematic/StepperMotorControlSchematic.srcs/sources_1/ipshared/xilinx.com/proc_sys_reset_v5_0/7820e39a/hdl/src/vhdl/sequence.vhd:222]
+ROM "tmp_11_fu_455_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_12_fu_461_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_13_fu_467_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_14_fu_473_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_15_fu_479_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_16_fu_485_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_17_fu_491_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_5_fu_277_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5) 
+ROM "tmp_18_fu_497_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_11_fu_455_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_12_fu_461_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_13_fu_467_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_14_fu_473_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_15_fu_479_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_16_fu_485_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_17_fu_491_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_5_fu_277_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5) 
+ROM "tmp_18_fu_497_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5) 
+ROM "tmp_13_v_cast_cast_fu_382_p3" won't be mapped to Block RAM because address size (1) smaller than threshold (5) 
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:45 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 14    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 6     
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 17    
+	   6 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module design_1_wrapper 
+Detailed RTL Component Info : 
+Module MUX_32 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module design_1_MUX_32_0_0 
+Detailed RTL Component Info : 
+Module cdc_sync 
+Detailed RTL Component Info : 
+Module lpf 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module upcnt_n 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module sequence 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 5     
+Module proc_sys_reset__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 5     
+Module design_1_proc_sys_reset_0_0 
+Detailed RTL Component Info : 
+Module stepperMotor 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 6     
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 16    
+	   6 Input      1 Bit        Muxes := 1     
+Module design_1_stepperMotor_0_3 
+Detailed RTL Component Info : 
+Module xlconstant__parameterized0 
+Detailed RTL Component Info : 
+Module design_1_xlconstant_0_0 
+Detailed RTL Component Info : 
+Module xlconstant__parameterized2 
+Detailed RTL Component Info : 
+Module design_1_xlconstant_1_0 
+Detailed RTL Component Info : 
+Module xlconstant__parameterized4 
+Detailed RTL Component Info : 
+Module design_1_xlconstant_1_1 
+Detailed RTL Component Info : 
+Module design_1 
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:35 ; elapsed = 00:00:45 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:45 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:35 ; elapsed = 00:00:45 . Memory (MB): peak = 591.066 ; gain = 431.844
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:47 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:47 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:37 ; elapsed = 00:00:47 . Memory (MB): peak = 591.066 ; gain = 431.844
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:37 ; elapsed = 00:00:47 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:06 ; elapsed = 00:01:16 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:06 ; elapsed = 00:01:16 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3332] Sequential element (\U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5 ) is unused and will be removed from module design_1_proc_sys_reset_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6 ) is unused and will be removed from module design_1_proc_sys_reset_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5 ) is unused and will be removed from module design_1_proc_sys_reset_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6 ) is unused and will be removed from module design_1_proc_sys_reset_0_0.
+INFO: [Synth 8-3332] Sequential element (\U0/ap_CS_fsm_reg[0] ) is unused and will be removed from module design_1_stepperMotor_0_3.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:06 ; elapsed = 00:01:17 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:07 ; elapsed = 00:01:18 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:07 ; elapsed = 00:01:18 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:07 ; elapsed = 00:01:18 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |    27|
+|3     |GND     |     1|
+|4     |LUT1    |    69|
+|5     |LUT2    |    81|
+|6     |LUT3    |    35|
+|7     |LUT4    |    10|
+|8     |LUT5    |     7|
+|9     |LUT6    |    56|
+|10    |MUXCY_L |    31|
+|11    |SRL16   |     1|
+|12    |VCC     |     1|
+|13    |XORCY   |    32|
+|14    |FDR     |     8|
+|15    |FDRE    |   101|
+|16    |FDSE    |     4|
+|17    |IBUF    |     7|
+|18    |OBUF    |     5|
++------+--------+------+
+
+Report Instance Areas: 
++------+--------------------------------------+-------------------------------+------+
+|      |Instance                              |Module                         |Cells |
++------+--------------------------------------+-------------------------------+------+
+|1     |top                                   |                               |   477|
+|2     |  design_1_i                          |design_1                       |   464|
+|3     |    MUX_32_0                          |design_1_MUX_32_0_0            |    32|
+|4     |      U0                              |MUX_32                         |    32|
+|5     |    proc_sys_reset_0                  |design_1_proc_sys_reset_0_0    |    68|
+|6     |      U0                              |proc_sys_reset__parameterized0 |    68|
+|7     |        EXT_LPF                       |lpf                            |    23|
+|8     |          \ACTIVE_LOW_AUX.ACT_LO_AUX  |cdc_sync                       |     5|
+|9     |          \ACTIVE_LOW_EXT.ACT_LO_EXT  |cdc_sync_0                     |     5|
+|10    |        SEQ                           |sequence                       |    40|
+|11    |          SEQ_COUNTER                 |upcnt_n                        |    14|
+|12    |    stepperMotor_0                    |design_1_stepperMotor_0_3      |   362|
+|13    |      U0                              |stepperMotor                   |   362|
+|14    |    xlconstant_0                      |design_1_xlconstant_0_0        |     0|
+|15    |    xlconstant_1                      |design_1_xlconstant_1_0        |     0|
+|16    |    xlconstant_2                      |design_1_xlconstant_1_1        |     0|
++------+--------------------------------------+-------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:07 ; elapsed = 00:01:18 . Memory (MB): peak = 591.066 ; gain = 431.844
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:51 . Memory (MB): peak = 591.066 ; gain = 84.754
+Synthesis Optimization Complete : Time (s): cpu = 00:01:07 ; elapsed = 00:01:18 . Memory (MB): peak = 591.066 ; gain = 431.844
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 106 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 17 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 8 instances
+  FDR => FDRE: 8 instances
+  SRL16 => SRL16E: 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+83 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:05 ; elapsed = 00:01:14 . Memory (MB): peak = 591.066 ; gain = 405.000
+# write_checkpoint -noxdef design_1_wrapper.dcp
+# catch { report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb }
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 591.066 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 27 15:57:12 2016...

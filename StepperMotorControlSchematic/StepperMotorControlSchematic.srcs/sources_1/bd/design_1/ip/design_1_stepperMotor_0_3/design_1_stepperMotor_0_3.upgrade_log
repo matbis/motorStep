@@ -1,0 +1,76 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
+| Date         : Tue Jan 26 16:30:20 2016
+| Host         : asus running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_stepperMotor_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_stepperMotor_0_3 (xilinx.com:hls:stepperMotor:1.0) from (Rev. 1601261611) to (Rev. 1601261628)
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
+| Date         : Tue Jan 26 16:15:46 2016
+| Host         : asus running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_stepperMotor_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_stepperMotor_0_3 (xilinx.com:hls:stepperMotor:1.0) from (Rev. 1601251112) to (Rev. 1601261611)
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
+| Date         : Mon Jan 25 11:23:44 2016
+| Host         : asus running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_stepperMotor_0_3'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_stepperMotor_0_3 (xilinx.com:hls:stepperMotor:1.0) from (Rev. 1601231654) to (Rev. 1601251112)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading IP 'design_1_stepperMotor_0_3'.
+
+
+-upgrade has added interface 'full_step_in_V'
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading IP 'design_1_stepperMotor_0_3'. These changes may impact your design.
+
+
+-upgrade has added port 'full_step_in_V'
+
